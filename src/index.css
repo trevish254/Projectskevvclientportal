@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+:root {
+  --color-black: rgb(0, 0, 0);
+  --color-white: rgb(255, 255, 255);
+  --color-glass-white: rgba(255, 255, 255, 0.6);
+  --color-accent-red: rgba(249, 85, 85, 1);
+  --color-success-green: rgb(41, 192, 18);
+  --color-muted-gray: rgb(160, 160, 160);
+  --color-light-gray-icon: rgb(187, 187, 187);
+  --color-dark-overlay: rgba(0, 0, 0, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Urbanist', 'Manrope', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, rgba(236, 233, 252, 0.7) 0%, rgba(243, 238, 229, 1) 100%);
+  color: #000;
+  overflow: hidden;
+}
+
+/* High Density Glass Card System */
+.glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 18px;
+  box-shadow: inset 0px 0px 5px rgba(221, 221, 221, 0.5);
+  position: relative;
+}
+
+.glass-border {
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  border-radius: 18px;
+  background: linear-gradient(162deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.2) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.inset-glow {
+  box-shadow: inset 0 0 12px 2px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar-blob {
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.05));
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes chatBubbleIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.92);
+  }
+  60% {
+    transform: translateY(-2px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes chatBubbleInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(24px) scale(0.92);
+  }
+  60% {
+    transform: translateX(-2px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes typingDot {
+  0%, 60%, 100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-chat-bubble {
+  animation: chatBubbleIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-chat-bubble-right {
+  animation: chatBubbleInRight 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.typing-dot {
+  animation: typingDot 1.4s infinite;
+}
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Sleek High Density Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.14);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.28);
+}
+

@@ -1,0 +1,7 @@
+{
+  "name": "English Learning Dashboard",
+  "description": "Video-call classroom and live chat dashboard for English learning - Let's Talk from the Start.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
